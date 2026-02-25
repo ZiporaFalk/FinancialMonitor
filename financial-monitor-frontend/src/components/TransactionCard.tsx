@@ -26,13 +26,11 @@ export const TransactionCard = ({ transaction, highlightedTx }: Props) => (
     <div
         className="tx-card"
         style={{
-            // backgroundColor: getStatusBg(transaction.status),
             backgroundColor: highlightedTx === transaction.transactionId ? "#484848" : getStatusBg(transaction.status),
             borderLeftColor: getStatusColor(transaction.status),
             transition: "background-color 0.4s ease, border-left-color 0.4s ease"
         }}
     >
-        {/* Left: status badge + timestamp */}
         <div className="tx-card-left">
             <div
                 className="tx-status-badge"
@@ -54,7 +52,6 @@ export const TransactionCard = ({ transaction, highlightedTx }: Props) => (
             </div>
         </div>
 
-        {/* Right: amount + ID + icon */}
         <div className="tx-card-right">
             <div className="tx-id">{transaction.transactionId.slice(0, 12).toUpperCase()}</div>
             <div className="tx-amount-row">

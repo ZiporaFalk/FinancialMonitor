@@ -6,14 +6,12 @@ import { fetchTransactions } from "../api/transactionService";
 import { TransactionCard } from "../components/TransactionCard";
 import "../styles/LiveDashboard.css";
 import { AnimatePresence, motion } from "framer-motion";
-// V0
+
 type FilterStatus = "All" | "Completed" | "Pending" | "Failed";
 
 export default function LiveDashboard() {
     const [transactions, setTransactions] = useState<Transaction[]>([]);
-    // V0
     const [filter, setFilter] = useState<FilterStatus>("All");
-    // ..
     const [highlightedTx, setHighlightedTx] = useState<string | null>(null);
 
     useEffect(() => {
@@ -30,13 +28,11 @@ export default function LiveDashboard() {
 
     const onTransactionReceived = useCallback((tx: Transaction) => {
         setTransactions(prev => [tx, ...prev]);
-        // ..
         setHighlightedTx(tx.transactionId);
         setTimeout(() => setHighlightedTx(null), 2000); // הדגשה 2 שניות
     }, []);
 
     useTransactionHub(onTransactionReceived, "http://localhost:5295/transactionHub");
-    // V0
     const counts = {
         total: transactions.length,
         completed: transactions.filter(t => t.status === "Completed").length,

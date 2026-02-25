@@ -7,10 +7,6 @@ namespace FinancialMonitor.Api.Services
     {
         private readonly ConcurrentDictionary<Guid, Transaction> _transactions = new();
 
-        //public void Add(Transaction transaction)
-        //{
-        //    _transactions[transaction.TransactionId] = transaction;
-        //}
         public bool Add(Transaction transaction)
         {
             return _transactions.TryAdd(transaction.TransactionId, transaction);

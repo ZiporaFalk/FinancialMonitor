@@ -1,7 +1,7 @@
 import { Transaction } from "../types/Transaction";
 import { getStatusColor } from "../utils/colorHelpers";
 import "../styles/Transactioncard.css"
-type Props = { transaction: Transaction };
+type Props = { transaction: Transaction; highlightedTx?: string | null };
 
 const getStatusBg = (status: string) => {
     switch (status) {
@@ -20,15 +20,16 @@ const getStatusIcon = (status: string) => {
         default: return "•";
     }
 };
-// -----
-export const TransactionCard = ({ transaction }: Props) => (
 
+export const TransactionCard = ({ transaction, highlightedTx }: Props) => (
 
     <div
         className="tx-card"
         style={{
-            backgroundColor: getStatusBg(transaction.status),
+            // backgroundColor: getStatusBg(transaction.status),
+            backgroundColor: highlightedTx === transaction.transactionId ? "#484848" : getStatusBg(transaction.status),
             borderLeftColor: getStatusColor(transaction.status),
+            transition: "background-color 0.4s ease, border-left-color 0.4s ease"
         }}
     >
         {/* Left: status badge + timestamp */}
@@ -39,6 +40,7 @@ export const TransactionCard = ({ transaction }: Props) => (
                     color: getStatusColor(transaction.status),
                     backgroundColor: getStatusColor(transaction.status) + "22",
                     borderColor: getStatusColor(transaction.status) + "44",
+                    transition: "color 0.4s ease, background-color 0.4s ease, border-color 0.4s ease"
                 }}
             >
                 <span className="tx-status-dot" style={{ background: getStatusColor(transaction.status) }} />

@@ -10,7 +10,6 @@ export const useTransactionHub = (
   const connectionRef = useRef<signalR.HubConnection | null>(null);
 
   useEffect(() => {
-    // יצירת החיבור עם הגדרות CORS ותיקון שגיאות אוטומטי
     const connection = new signalR.HubConnectionBuilder()
       .withUrl(hubUrl, { withCredentials: true })
       .withAutomaticReconnect()

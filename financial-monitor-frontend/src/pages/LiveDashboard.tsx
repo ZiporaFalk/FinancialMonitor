@@ -5,6 +5,7 @@ import { useTransactionHub } from "../hooks/useTransactionHub";
 import { fetchTransactions } from "../api/transactionService";
 import { TransactionCard } from "../components/TransactionCard";
 import "../styles/LiveDashboard.css";
+import { AnimatePresence, motion } from "framer-motion";
 // V0
 type FilterStatus = "All" | "Completed" | "Pending" | "Failed";
 
@@ -12,6 +13,8 @@ export default function LiveDashboard() {
     const [transactions, setTransactions] = useState<Transaction[]>([]);
     // V0
     const [filter, setFilter] = useState<FilterStatus>("All");
+    // ..
+    const [highlightedTx, setHighlightedTx] = useState<string | null>(null);
 
     useEffect(() => {
         const load = async () => {
@@ -27,6 +30,9 @@ export default function LiveDashboard() {
 
     const onTransactionReceived = useCallback((tx: Transaction) => {
         setTransactions(prev => [tx, ...prev]);
+        // ..
+        setHighlightedTx(tx.transactionId);
+        setTimeout(() => setHighlightedTx(null), 2000); // הדגשה 2 שניות
     }, []);
 
     useTransactionHub(onTransactionReceived, "http://localhost:5295/transactionHub");
@@ -116,9 +122,19 @@ export default function LiveDashboard() {
                 </div>
             ) : (
                 <div className="dashboard-list">
-                    {filtered.map(tx => (
-                        <TransactionCard key={tx.transactionId} transaction={tx} />
-                    ))}
+                    <AnimatePresence initial={false}>
+                        {filtered.map(tx => (
+                            <motion.div
+                                key={tx.transactionId}
+                                initial={{ opacity: 0, y: -20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 20 }}
+                                layout
+                            >
+                                <TransactionCard transaction={tx} highlightedTx={highlightedTx} />
+                            </motion.div>
+                        ))}
+                    </AnimatePresence>
                 </div>
             )}
         </div>

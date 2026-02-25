@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35728.132 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialMonitor.Api", "FinancialMonitor.Api\FinancialMonitor.Api.csproj", "{30858A13-D9D3-4F65-9B59-92BA22D67B7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialMonitor.Tests", "FinancialMonitor.Tests\FinancialMonitor.Tests.csproj", "{F97934B6-3F7C-46C0-8D40-65C4336128AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30858A13-D9D3-4F65-9B59-92BA22D67B7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30858A13-D9D3-4F65-9B59-92BA22D67B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30858A13-D9D3-4F65-9B59-92BA22D67B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30858A13-D9D3-4F65-9B59-92BA22D67B7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F97934B6-3F7C-46C0-8D40-65C4336128AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F97934B6-3F7C-46C0-8D40-65C4336128AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F97934B6-3F7C-46C0-8D40-65C4336128AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F97934B6-3F7C-46C0-8D40-65C4336128AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&display=swap');
+
+.add-root {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 36px 24px 60px;
+}
+
+.add-page-header {
+  margin-bottom: 28px;
+}
+
+.add-page-title {
+  font-family: 'Heebo', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.add-page-sub {
+  font-size: 0.9rem;
+  color: #9aa3b0;
+}
+
+.add-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e8ecf0;
+  padding: 32px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  animation: addIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes addIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.add-card-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.add-card-icon {
+  width: 50px;
+  height: 50px;
+  background: #1e40af;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(30,64,175,0.25);
+}
+
+.add-card-eyebrow {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #9aa3b0;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.add-card-title {
+  font-family: 'Heebo', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  letter-spacing: -0.3px;
+}
+
+.add-card-description {
+  font-size: 0.88rem;
+  color: #6b7280;
+  line-height: 1.65;
+  background: #f8fafc;
+  border: 1px solid #e8ecf0;
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px;
+  background: #1e40af;
+  color: #ffffff;
+  font-family: 'Heebo', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  box-shadow: 0 3px 12px rgba(30,64,175,0.28);
+  letter-spacing: 0.01em;
+}
+
+.add-btn:hover:not(:disabled) {
+  background: #1d3a9e;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(30,64,175,0.34);
+}
+
+.add-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.add-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.add-btn-spinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.65s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Last sent row */
+.add-last-sent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  animation: fadeIn 0.3s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.add-last-sent-label {
+  color: #9aa3b0;
+  font-weight: 500;
+}
+
+.add-last-sent-amount {
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.add-last-sent-status {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.add-last-sent-status[data-status="Completed"] {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.add-last-sent-status[data-status="Pending"] {
+  background: #fef9c3;
+  color: #a16207;
+}
+
+.add-last-sent-status[data-status="Failed"] {
+  background: #fee2e2;
+  color: #dc2626;
+}

@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Heebo', sans-serif;
+  background: #f0f2f5;
+  min-height: 100vh;
+  color: #1a1a2e;
+}
+
+/* ── NAV ── */
+.app-nav {
+  background: #ffffff;
+  border-bottom: 1px solid #e8ecf0;
+  padding: 0 32px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.app-nav-connected {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #22c55e;
+}
+
+.app-nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.app-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.app-nav-brand-text {
+  text-align: right;
+}
+
+.app-nav-brand-name {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  letter-spacing: -0.3px;
+}
+
+.app-nav-brand-sub {
+  display: block;
+  font-size: 0.72rem;
+  color: #9aa3b0;
+  font-weight: 400;
+}
+
+.app-nav-brand-icon {
+  width: 44px;
+  height: 44px;
+  background: #1e40af;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+/* ── TAB BAR ── */
+.app-tab-bar {
+  background: #ffffff;
+  border-bottom: 1px solid #e8ecf0;
+  padding: 0 32px;
+  display: flex;
+  gap: 4px;
+}
+
+.app-tab-link {
+  font-family: 'Heebo', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #9aa3b0;
+  text-decoration: none;
+  padding: 14px 18px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.18s ease;
+}
+
+.app-tab-link:hover {
+  color: #1a1a2e;
+}
+
+.app-tab-link--active {
+  color: #1e40af;
+  border-bottom-color: #1e40af;
+  font-weight: 600;
+}

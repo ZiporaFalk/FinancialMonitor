@@ -1,0 +1,22 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: financial-monitor
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: financial-monitor
+  template:
+    metadata:
+      labels:
+        app: financial-monitor
+    spec:
+      containers:
+        - name: backend
+          image: your-dockerhub-username/financial-monitor:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: REDIS_HOST
+              value: "redis-service"  # אם את משתמשת ב-Pub/Sub

@@ -9,7 +9,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
-        // מאפשר המרת enum למחרוזת ב-JSON
         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     });
 builder.Services.AddSignalR()
@@ -18,7 +17,6 @@ builder.Services.AddSignalR()
         options.PayloadSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     });
 builder.Services.AddOpenApi();
-//builder.Services.AddSingleton<TransactionStore>();   // 
 builder.Services.AddSingleton<TransactionStore>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
 builder.Services.AddCors(options =>
@@ -26,7 +24,6 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowLocal", policy =>
     {
         policy.WithOrigins("http://localhost:5173")
-        //policy.WithOrigins("https://localhost:5173")
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
@@ -41,8 +38,6 @@ if (app.Environment.IsDevelopment())
 }
 
 //app.UseHttpsRedirection();
-//app.UseAuthentication();//מריקי
-//app.UseAuthorization();
 app.MapControllers();
 
 app.MapHub<TransactionHub>("/transactionHub");

@@ -81,45 +81,7 @@ export default function AddTransaction() {
   };
 
   return (
-    // <div style={{ padding: 20 }}>
-    //   <h2>Transaction Simulator</h2>
-    //   <button onClick={sendTransaction} disabled={loading}>
-    //     {loading ? "Sending..." : "Generate Transaction"}
-    //   </button>
-    // </div>
-    // ..חדש
-    //  <div className="add-root">
-    //   <div className="add-card">
-    //     <div className="add-card-header">
-    //       <div className="add-card-icon">⚡</div>
-    //       <div>
-    //         <p className="add-card-eyebrow">PAYMENT SIMULATOR</p>
-    //         <h2 className="add-card-title">Generate Transaction</h2>
-    //       </div>
-    //     </div>
-    //     <p className="add-card-description">
-    //       Create a randomized mock payment and push it to the live monitoring stream instantly.
-    //     </p>
-    //     <button
-    //       className={`add-btn${loading ? " add-btn--loading" : ""}`}
-    //       onClick={sendTransaction}
-    //       disabled={loading}
-    //     >
-    //       {loading ? (
-    //         <>
-    //           <span className="add-btn-spinner" />
-    //           Sending...
-    //         </>
-    //       ) : (
-    //         <>
-    //           <span className="add-btn-icon">→</span>
-    //           Generate Transaction
-    //         </>
-    //       )}
-    //     </button>
-    //   </div>
-    // </div>
-    // V0
+    
     <div className="add-root">
       <div className="add-page-header">
         <h1 className="add-page-title">Add Transaction</h1>
@@ -173,26 +135,5 @@ export default function AddTransaction() {
         )}
       </div>
     </div>
-  // עיצוב כהה
-  //  <div className="add-root">
-  //     <div className="add-card">
-  //       <div className="add-card-glow" />
-  //       <div className="add-card-header">
-  //         <span className="add-card-tag">SIM</span>
-  //         <h2 className="add-card-title">Transaction Simulator</h2>
-  //       </div>
-  //       <p className="add-card-description">
-  //         Generate a randomized mock transaction and push it to the live stream.
-  //       </p>
-  //       <button
-  //         className={"add-btn" + (loading ? " add-btn--loading" : "")}
-  //         onClick={sendTransaction}
-  //         disabled={loading}
-  //       >
-  //         <span className="add-btn-icon">{loading ? "⟳" : "⚡"}</span>
-  //         <span>{loading ? "Sending..." : "Generate Transaction"}</span>
-  //       </button>
-  //     </div>
-  //   </div>
   );
 }

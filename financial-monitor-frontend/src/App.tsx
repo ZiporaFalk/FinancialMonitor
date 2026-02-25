@@ -5,53 +5,7 @@ import "./App.css";
 
 function App() {
   return (
-    // <BrowserRouter>
-    //   <nav style={{ padding: 20 }}>
-    //     <NavLink to="/add" style={{ marginRight: 20 }}>Add Transaction</NavLink>
-    //     <NavLink to="/monitor">Live Dashboard</NavLink>
-    //   </nav>
-
-    //   <Routes>
-    //     <Route path="/add" element={<AddTransaction />} />
-    //     <Route path="/monitor" element={<LiveDashboard />} />
-    //   </Routes>
-    // </BrowserRouter>
-    // חדש
-//  <BrowserRouter>
-//       <nav className="app-nav">
-//         <div className="app-nav-inner">
-//           <div className="app-nav-brand">
-//             <span className="app-nav-brand-mark">◈</span>
-//             <span className="app-nav-brand-name">FinFlow</span>
-//           </div>
-//           <div className="app-nav-links">
-//             <NavLink
-//               to="/add"
-//               className={({ isActive }) =>
-//                 "app-nav-link" + (isActive ? " app-nav-link--active" : "")
-//               }
-//             >
-//               Add Transaction
-//             </NavLink>
-//             <NavLink
-//               to="/monitor"
-//               className={({ isActive }) =>
-//                 "app-nav-link" + (isActive ? " app-nav-link--active" : "")
-//               }
-//             >
-//               Live Dashboard
-//             </NavLink>
-//           </div>
-//         </div>
-//       </nav>
-
-//       <Routes>
-//         <Route path="/add" element={<AddTransaction />} />
-//         <Route path="/monitor" element={<LiveDashboard />} />
-//       </Routes>
-//     </BrowserRouter>
-// V0 
-<BrowserRouter>
+    <BrowserRouter>
       <nav className="app-nav">
         <div className="app-nav-left">
           <span className="app-nav-connected">
@@ -92,32 +46,7 @@ function App() {
         <Route path="/monitor" element={<LiveDashboard />} />
       </Routes>
     </BrowserRouter>
-    // כהה
-    // <BrowserRouter>
-    //   <nav className="app-nav">
-    //     <div className="app-nav-inner">
-    //       <span className="app-nav-brand">⬡ FinFlow</span>
-    //       <div className="app-nav-links">
-    //         <NavLink
-    //           to="/add"
-    //           className={({ isActive }) => "app-nav-link" + (isActive ? " app-nav-link--active" : "")}
-    //         >
-    //           Add Transaction
-    //         </NavLink>
-    //         <NavLink
-    //           to="/monitor"
-    //           className={({ isActive }) => "app-nav-link" + (isActive ? " app-nav-link--active" : "")}
-    //         >
-    //           Live Dashboard
-    //         </NavLink>
-    //       </div>
-    //     </div>
-    //   </nav>
-    //   <Routes>
-    //     <Route path="/add" element={<AddTransaction />} />
-    //     <Route path="/monitor" element={<LiveDashboard />} />
-    //   </Routes>
-    // </BrowserRouter>
+
   );
 }
 
